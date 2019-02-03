@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['auth', 'application-default', 'print-access-token']
+  entrypoint: 'bash'
+  args: ['-c', './build.sh']
   env:
   - 'BUILD_ID=$BUILD_ID'
   - 'PROJECT_ID=$PROJECT_ID'
